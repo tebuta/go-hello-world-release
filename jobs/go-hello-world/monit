@@ -1,0 +1,5 @@
+check process go-hello-world
+  with pidfile /var/vcap/sys/run/go-hello-world/pid
+  start program "/var/vcap/jobs/go-hello-world/bin/ctl start"
+  stop program "/var/vcap/jobs/go-hello-world/bin/ctl stop"
+  group vcap
