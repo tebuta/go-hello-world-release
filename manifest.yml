@@ -30,7 +30,5 @@ instance_groups:
   stemcell: default
   networks:
   - name: buildstack
-    static_ips:
-    - 10.40.0.10
 tags:
   project: go-hello-world

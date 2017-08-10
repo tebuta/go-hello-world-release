@@ -11,13 +11,13 @@ case $1 in
     mkdir -p $RUN_DIR $LOG_DIR
     chown -R $RUN_AS:$RUN_AS $RUN_DIR $LOG_DIR
 
-    echo $$ > $PIDFILE
-
     cd /var/vcap/packages/go-hello-world
 
     exec /var/vcap/packages/go-hello-world/bin/go-hello-world \
-      >>  $LOG_DIR/web_ui.stdout.log \
-      2>> $LOG_DIR/web_ui.stderr.log
+      >>  $LOG_DIR/go-hello-world.stdout.log \
+      2>> $LOG_DIR/go-hello-world.stderr.log
+
+    echo $$ > $PIDFILE
     ;;
 
   stop)
