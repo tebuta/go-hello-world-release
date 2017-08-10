@@ -1,1 +1,8 @@
+---
 name: go-hello-world
+blobstore:
+  provider: s3
+  options:
+    host: storage.googleapis.com
+    port: 443    
+    bucket_name: bosh-blobstore

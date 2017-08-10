@@ -1,8 +1,11 @@
 ---
 name: go-hello-world
 
-templates: {}
+templates:
+  ctl: bin/ctl
 
-packages: []
+packages:
+  - golang
+  - go-hello-world
 
 properties: {}

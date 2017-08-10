@@ -1,0 +1,8 @@
+---
+name: go-hello-world
+
+dependencies:
+  - golang
+
+files:
+  - github.com/cagiti/go-hello-world/*
