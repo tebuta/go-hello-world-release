@@ -1,0 +1,3 @@
+[submodule "src/github.com/cagiti/go-hello-world"]
+	path = src/github.com/cagiti/go-hello-world
+	url = https://github.com/cagiti/go-hello-world
