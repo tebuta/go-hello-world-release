@@ -1,0 +1,36 @@
+
+---
+name: go-hello-world
+
+releases:
+- name: go-hello-world
+  version: latest
+
+stemcells:
+- alias: default
+  os: ubuntu-trusty
+  version: latest
+
+update:
+  canaries: 1
+  max_in_flight: 2
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000
+
+instance_groups:
+- name: go-hello-world
+  azs:
+  - z1
+  instances: 1
+  jobs:
+  - name: go-hello-world
+    release: go-hello-world
+    properties: {}
+  vm_type: t2.small
+  stemcell: default
+  networks:
+  - name: buildstack
+    static_ips:
+    - 10.40.0.10
+tags:
+  project: go-hello-world
