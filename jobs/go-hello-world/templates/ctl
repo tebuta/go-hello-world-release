@@ -13,11 +13,12 @@ case $1 in
 
     cd /var/vcap/packages/go-hello-world
 
-    exec /var/vcap/packages/go-hello-world/bin/go-hello-world \
+    echo $$ > $PIDFILE
+
+    /var/vcap/packages/go-hello-world/bin/go-hello-world \
       >>  $LOG_DIR/go-hello-world.stdout.log \
       2>> $LOG_DIR/go-hello-world.stderr.log
 
-    echo $$ > $PIDFILE
     ;;
 
   stop)
@@ -27,4 +28,4 @@ case $1 in
   *)
     echo "Usage: ctl {start|stop}" ;;
 
-esac`
+esac
